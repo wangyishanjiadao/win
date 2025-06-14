@@ -1,0 +1,132 @@
+/* 亮色主题 */
+[data-theme="light"] {
+  --bg-primary: #f8f9faa2;
+  --bg-secondary: #edf2f7;
+  --text-primary: #000000;
+  --text-secondary: #1a1a1a;
+  --border-color: #e2e8f0;
+  --hover-bg: #edf2f7;
+  --sidebar-bg: #f8f9fa;
+  --footer-bg: #edf2f7;
+  --search-bg: #e2e8f0;
+  --search-border: #cbd5e0;
+  --highlight-bg: #cbd5e0;
+}
+
+/* 暗色主题 */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #252525;
+  --text-primary: #ffffff;
+  --text-secondary: #a8a8a8;
+  --border-color: #444444;
+  --hover-bg: #333333;
+  --sidebar-bg: #1a1a1a;
+  --footer-bg: #232323;
+  --search-bg: #3d3d3d;
+  --search-border: #444444;
+  --highlight-bg: #3d3d3d;
+}
+
+/* 应用主题变量 */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* 确保亮色模式下所有文字元素使用深色 */
+[data-theme="light"] .sidebar nav a,
+[data-theme="light"] a,
+[data-theme="light"] p,
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] span,
+[data-theme="light"] div,
+[data-theme="light"] label,
+[data-theme="light"] button {
+  color: var(--text-primary);
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  border-right-color: var(--border-color);
+}
+
+.sidebar nav a {
+  color: var(--text-secondary);
+}
+
+.sidebar nav a:hover {
+  color: var(--text-primary);
+  background-color: var(--hover-bg);
+  border-color: var(--border-color);
+}
+
+.main-content header input[type="search"] {
+  background-color: var(--search-bg);
+  border-color: var(--search-border);
+  color: var(--text-primary);
+}
+
+.right-nav {
+  background-color: var(--sidebar-bg);
+  border-left-color: var(--border-color);
+}
+
+.footer-links {
+  background: var(--footer-bg);
+  border-top-color: var(--border-color);
+}
+
+/* 搜索结果高亮样式 */
+[data-theme="light"] .highlight {
+  background-color: #2d3748;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .highlight {
+  background-color: #f7fafc;
+  color: #1a202c;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* 搜索结果中h2标签的强调样式 */
+[data-theme="light"] .search-result h2 {
+  background-color: #2d3748;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--hover-bg);
+}
+
+.theme-toggle i {
+  font-size: 1.2em;
+}
